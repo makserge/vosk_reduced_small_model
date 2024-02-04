@@ -109,3 +109,12 @@ Accept connection
     ./configure --shared
     make depend -j 4
     make -j 4
+
+44. Update language model
+
+    cd ../egs/wsj/s5    
+
+    wget "https://alphacephei.com/vosk/models/vosk-model-small-ru-0.22-compile.tar.gz"
+    tar -xf vosk-model-small-ru-0.22-compile.tar.gz
+    mv vosk-model-small-ru-0.22-compile/* .
+

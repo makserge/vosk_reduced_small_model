@@ -1,0 +1,1 @@
+# vosk_reduced_small_model

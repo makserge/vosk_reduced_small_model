@@ -46,7 +46,7 @@ Accept connection
 
     apt update
     apt upgrade
-    apt install unzip git clang make automake sox gfortran libtool subversion g++ zlib1g-dev sudo -y
+    apt install unzip git clang make automake sox gfortran libtool subversion g++ zlib1g-dev sudo gawk -y
 
 32. Add user to sudoers 
 
@@ -96,4 +96,5 @@ Accept connection
 
     extras/install_irstlm.sh
     extras/install_opengrm.sh
+    
     

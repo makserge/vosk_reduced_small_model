@@ -4,7 +4,7 @@ Based on info from https://habr.com/ru/articles/735480/
 
 0. Download stable Debian 12.4 (debian-12.4.0-amd64-netinst.iso) from official repository
      https://www.debian.org/CD/http-ftp/#stable
-1. Create VirtualBox machine with 2GB RAM, 2CPU, 20GB storage, set first network adapter to bridge mode with ethernet adapter on host machine
+1. Create VirtualBox machine with 8GB RAM, 4CPU, 20GB storage, set first network adapter to bridge mode with ethernet adapter on host machine
 2. Run VM and select "Install" option
 3. Select "English" and press "Enter"
 4. Select "United States" and press "Enter"
@@ -97,4 +97,15 @@ Accept connection
     extras/install_irstlm.sh
     extras/install_opengrm.sh
     
+42. Install SRIM
+
+    wget https://github.com/weimeng23/SRILM/raw/master/srilm-1.7.3.tar.gz
+    mv srilm-1.7.3.tar.gz srilm.tar.gz
+    extras/install_srilm.sh
     
+43. Install tools
+
+    cd ../src
+    ./configure --shared
+    make depend -j 4
+    make -j 4

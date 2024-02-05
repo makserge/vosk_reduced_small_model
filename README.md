@@ -46,7 +46,7 @@ Accept connection
 
     apt update
     apt upgrade
-    apt install unzip git clang make automake sox gfortran libtool subversion g++ zlib1g-dev sudo gawk -y
+    apt install unzip git clang make automake sox gfortran libtool subversion g++ zlib1g-dev sudo gawk pip -y
 
 32. Add user to sudoers 
 
@@ -117,4 +117,34 @@ Accept connection
     wget "https://alphacephei.com/vosk/models/vosk-model-small-ru-0.22-compile.tar.gz"
     tar -xf vosk-model-small-ru-0.22-compile.tar.gz
     mv vosk-model-small-ru-0.22-compile/* .
+
+45. Copy all content of kaldi/tools/env.sh and paste to the end of kaldi/egs/wsj/s5/path.sh
+
+     Example of kaldi/egs/wsj/s5/path.sh:
+
+export KALDI_ROOT=`pwd`/../../..
+export PATH=$PWD/utils:$KALDI_ROOT/src/bin:$KALDI_ROOT/tools/openfst/bin:$KALDI_ROOT/src/fstbin:$KALDI_ROOT/src/gmmbin:$KALDI_ROOT/src/featbin:$KALDI_ROOT/src/lm:$KALDI_ROOT/src/sgmmbin:$KALDI_ROOT/src/sgmm2bin:$KALDI_ROO$
+export PATH=$KALDI_ROOT/tools/ngram-1.3.7/src/bin:$PATH
+export LD_LIBRARY_PATH=$KALDI_ROOT/tools/openfst/lib/fst/
+export LC_ALL=C
+
+export PATH=/home/sergey/new-model/kaldi/tools/python:${PATH}
+export IRSTLM=/home/sergey/new-model/kaldi/tools/irstlm
+export PATH=${PATH}:${IRSTLM}/bin
+export LIBLBFGS=/home/sergey/new-model/kaldi/tools/liblbfgs-1.10
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH:-}:${LIBLBFGS}/lib/.libs
+export SRILM=/home/sergey/new-model/kaldi/tools/srilm
+export PATH=${PATH}:${SRILM}/bin:${SRILM}/bin/i686-m64
+
+46. Run this file
+
+    ./path.sh
+
+47. Install phonetisaurus
+
+    sudo pip install phonetisaurus --break-system-packages
+
+48. Generate model
+
+    ./compile-graph.sh
 

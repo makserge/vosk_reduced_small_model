@@ -151,3 +151,9 @@ export PATH=${PATH}:${SRILM}/bin:${SRILM}/bin/i686-m64
 
     ./compile-graph.sh
 
+49. Copy generated files
+
+kaldi/egs/wsj/s5/exp/tdnn/lgraph/Gr.fst
+kaldi/egs/wsj/s5/exp/tdnn/lgraph/HCLr.fst
+
+to new-model/vosk-model-small-ru-0.22/graph

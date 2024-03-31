@@ -121,7 +121,9 @@ Accept connection
     tar -xf vosk-model-small-ru-0.22-compile.tar.gz
     mv vosk-model-small-ru-0.22-compile/* .
 
-45. Copy all content of kaldi/tools/env.sh and paste to the end of kaldi/egs/wsj/s5/path.sh
+45. Edit kaldi/egs/wsj/s5/db/ru-250k.dic by removing some words
+
+46. Copy all content of kaldi/tools/env.sh and paste to the end of kaldi/egs/wsj/s5/path.sh
 
      Example of kaldi/egs/wsj/s5/path.sh:
 
@@ -139,19 +141,19 @@ export LD_LIBRARY_PATH=${LD_LIBRARY_PATH:-}:${LIBLBFGS}/lib/.libs
 export SRILM=/home/sergey/new-model/kaldi/tools/srilm
 export PATH=${PATH}:${SRILM}/bin:${SRILM}/bin/i686-m64
 
-46. Run this file
+47. Run this file
 
     ./path.sh
 
-47. Install phonetisaurus
+48. Install phonetisaurus
 
     sudo pip install phonetisaurus --break-system-packages
 
-48. Generate model
+49. Generate model
 
     ./compile-graph.sh
 
-49. Copy generated files
+50. Copy generated files
 
 kaldi/egs/wsj/s5/exp/tdnn/lgraph/Gr.fst
 kaldi/egs/wsj/s5/exp/tdnn/lgraph/HCLr.fst
